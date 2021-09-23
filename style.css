@@ -1,0 +1,146 @@
+body {
+  margin: 0;
+  font-family: "Verdana", "Tahoma", sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+  box-sizing: border-box;
+  background-color: #f6f8fe;
+}
+
+.heading {
+  margin: 0;
+  padding: 20px 16px 22px;
+  text-align: center;
+  font-size: 18px;
+  line-height: 22px;
+  letter-spacing: 0.5px;
+  font-weight: normal;
+  text-transform: uppercase;
+  color: #ffffff;
+  background-color: #5c8bf0;
+}
+
+.todo-list {
+  margin: 0 0 20px;
+  padding: 0;
+  list-style: none;
+  counter-reset: todos;
+}
+
+.todo-list li {
+  margin-top: 1px;
+  padding: 20px 16px;
+  background-color: #ffffff;
+  color: #5c8bf0;
+}
+
+.todo-list li::before {
+  counter-increment: todos;
+  content: counter(todos);
+  padding: 6px 10px;
+  margin-right: 10px;
+  border: 1px solid #5c8bf0;
+  border-radius: 16px;
+}
+
+.todo-list .is-important {
+  font-weight: bold;
+  color: #ffffff;
+  background-color: #f98f2d;
+}
+
+.todo-list .is-important::before {
+  border: none;
+  color: #f98f2d;
+  background-color: #ffffff;
+}
+
+.todo-form {
+  padding: 0 16px;
+  display: flex;
+  flex-direction: column;
+}
+
+.input-label {
+  margin: 0 0 4px;
+  font-size: 10px;
+  line-height: 12px;
+  color: #5c8bf0;
+}
+
+.todo-input {
+  margin-bottom: 12px;
+  padding: 10px 12px;
+  font-family: "Verdana", "Tahoma", sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+  border-radius: 4px;
+  border: 1px solid #5c8bf0;
+}
+
+.todo-form button {
+  margin-bottom: 6px;
+  margin-right: auto;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 4px;
+}
+
+.todo-priority {
+  position: relative;
+  padding: 12px 22px 12px 44px;
+  color: #5c8bf0;
+  background-color: transparent;
+}
+
+.todo-priority::before {
+  position: absolute;
+  content: "";
+  top: 11px;
+  left: 20px;
+  width: 16px;
+  height: 16px;
+  background-image: url("img/icon-change.svg");
+}
+
+.todo-priority.is-important {
+  font-weight: bold;
+  color: #f98f2d;
+}
+
+.todo-priority.is-important::before {
+  filter: hue-rotate(169deg) saturate(1.3) brightness(1.15);
+  transform: rotate(180deg);
+}
+
+.todo-add {
+  padding: 12px 22px;
+  color: #ffffff;
+  background-color: #5c8bf0;
+}
+
+.todo-input:focus,
+.todo-form button:focus {
+  outline: 3px solid #bac9f7;
+  outline-offset: 0;
+}
+
+.todo-priority:hover {
+  background-color: #edf1fd;
+}
+
+.todo-priority:active {
+  background-color: #e3eafc;
+  opacity: 0.5;
+}
+
+.todo-add:hover {
+  background-color: #447aee;
+}
+
+.todo-add:active {
+  opacity: 0.5;
+}
